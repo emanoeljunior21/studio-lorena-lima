@@ -1,31 +1,16 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const footer = document.querySelector("footer");
 
-    footer.addEventListener("mouseover", function() {
-      
-        footer.style.backgroundColor = "#555";
+    function toggleDropdown(element) {
+        // 
+        var dropdown = element.querySelector('.dropdown');
+
+        dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+    }
+
+    // Add event listeners to each item with a dropdown
+    document.querySelectorAll('.item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            // Toggle the dropdown when an item is clicked
+            toggleDropdown(item);
+        });
     });
-
-   
-    footer.addEventListener("mouseout", function() {
-      
-        footer.style.backgroundColor = "#333";
-    });
-});
-
-document.getElementById("instagramLink").addEventListener("click", function(event) {
-    event.preventDefault(); 
-
-    window.open(this.getAttribute("href"), "_blank");
-});
-
-document.getElementById("whatsappLink").addEventListener("click", function(event) {
-   
-    window.open(this.getAttribute("href"), "_blank");
-});
-
-document.getElementById("locationLink").addEventListener("click", function(event) {
-  
-    window.open(this.getAttribute("href"), "_blank");
-});
 
