@@ -28,3 +28,4 @@ document.getElementById("locationLink").addEventListener("click", function(event
   
     window.open(this.getAttribute("href"), "_blank");
 });
+
